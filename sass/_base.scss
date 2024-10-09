@@ -16,10 +16,10 @@ $font-display: "Josefin Sans", sans-serif;
 
 // RESPONSIVE BREAKPOINTS
 
-$bp-xl: 75em; //1200 px
+$bp-xl: 75em;   //1200 px
 $bp-lg: 62.5em; //1000 px
-$bp-md: 75em; //1200 px
-$bp-sm: 75em; //1200 px
+$bp-md: 50em;   //800 px
+$bp-sm: 37.5em; //600 px
 
 *,
 *::before,
@@ -60,5 +60,9 @@ body {
       [full-start] minmax(6rem, 1fr)
       [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
       [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
   }
 }
